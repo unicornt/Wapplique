@@ -82,7 +82,7 @@ docker run --name="wapplique" \
  -it wapplique
 ```
 
-{PATH_TO_RUNTIMENAME} is the path of different runtimes on your machine.
+{PATH_TO_RUNTIMENAME} is the root directory for the source code of the runtime specified by {RUNTIMENAME}. Wapplique assumes that the executable binary is located in the default path, such as `/wasmedge/build/tools/wasmedge/wasmedge`. If you built the binary in a different directory, please update the path in lines 17–24 of `run_case.py`.
 
 ### Start Fuzzing
 
@@ -120,4 +120,16 @@ After modifying, please rebuild the docker image with
 
 ```bash
 DOCKER_BUILDKIT=1 docker image build . -t wapplique
+```
+
+## Cite us
+
+```
+@inproceedings{zhao2024wapplique,
+  title={Wapplique: Testing WebAssembly Runtime via Execution Context-Aware Bytecode Mutation},
+  author={Zhao, Wenxuan and Zeng, Ruiying and Zhou, Yangfan},
+  booktitle={Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis},
+  pages={1035--1047},
+  year={2024}
+}
 ```
